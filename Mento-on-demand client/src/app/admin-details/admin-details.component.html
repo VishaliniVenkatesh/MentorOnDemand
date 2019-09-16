@@ -1,0 +1,73 @@
+<app-header></app-header>
+<body>
+    
+
+
+<article>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+          <ul class="nav navbar-nav">
+             
+              <li class="active"><a routerLink="#" id="Manage-User" class="nav-link"> Manage User </a></li>
+              <li><a  routerLink="#" id="Manage-Mentor" class="nav-link"> Manage Mentor </a></li>
+               <li><a  routerLink="#" id="manage-skills" class="nav-link"> Manage Skills </a></li>
+               
+             
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+              <li>
+                <div class="Search" id="search">
+                    <form class="form-inline">
+                        <div class="input-group">                    
+                            <input type="text" class="form-control" placeholder="Search Mentor" value="">
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+              </li>
+              <li><a routerLink="#" class="nav-link"><span class="glyphicon glyphicon-envelope"> </span>Notification</a></li>
+              <li><a routerLink="/admin-login" class="nav-link"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          </ul>
+      </div>
+  </nav>
+  <div id="SearchMentor">
+      <form class="form-inline my-2 my-lg-0" style="margin-left:25%;margin-top: 90px">
+        <br/>
+          <input class="form-control mr-sm-2" type="search" placeholder="Shakthi" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <form name="adminUser" method="post" action="">
+
+          <table class="AdminSearch-tab">
+              <tr>
+                  <th> <label>Sl.NO</label> </th>
+                  <th> <label> Name</label> </th>
+                  <th> <label>Active</label> </th>
+                  <th><label>Action</label> </th>
+              </tr>
+              <tr>
+                  <td>1</td>
+                  <td>Shakthi</td>
+                  <td>Yes</td>
+                  <td><a routerLink="#">DeActivate</a> </td>
+              </tr>
+              <tr>
+                  <td>2</td>
+                  <td>Shakthi sree</td>
+                  <td>No</td>
+                  <td><a routerLink="#">Activate</a></td>
+              </tr>
+          </table>
+
+      </form>
+  </div>
+  
+ 
+ 
+  </article>
+</body>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

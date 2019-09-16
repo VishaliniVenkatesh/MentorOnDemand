@@ -1,0 +1,52 @@
+<article>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
+      <div class="container-fluid">
+          <ul class="nav navbar-nav">
+             
+              <li class="nav-item active"><a routerLink="/search-mentor" routerLinkActive="active" class="nav-link">Search-Mentor</a></li>
+              <li><a routerLink="/response-for-proposals" routerLinkActive="active" class="nav-link">view-Responses</a></li>
+              <li><a routerLink="/completed-trainings" routerLinkActive="active" class="nav-link">Completed Trainings</a></li>
+              <li> <a routerLink="/onprogress-trainings" routerLinkActive="active" class="nav-link">On progress Trainings</a></li> 
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+              <li><a routerLink="/mentor-login" routerLinkActive="active" class="nav-link"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
+          </ul>
+      </div>
+  </nav> 
+<h3>Search mentor based on technology</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="skill_name">Skill Name</label>
+      <input type="text" class="form-control" id="skill_name" name="skill_name" required [(ngModel)]="skill_name">
+    </div>
+
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<ul>
+<table *ngIf="mentors">
+      <tr>
+          <th>Mentor Name</th>
+          <th>Skill name</th>
+          <th>Rating</th>
+          <th>Years of Experience</th>
+          <th>Facilities Offered</th>                                                                                                                                                                                                        
+      </tr>
+      <tr *ngFor="let mentor of mentors ">
+  
+          <td>{{mentor.username}}</td>
+          <td>{{mentor.skill_name}}</td>
+          <td>{{mentor.self_rating}}</td>
+          <td>{{mentor.years_of_exp}}</td>
+          <td>{{mentor.facilities_offered}}</td>
+          <td >
+            <button type="button" class="btn btn-success" (click)="propose(proposed)" >Propose</button>
+          </td>
+       </tr>
+  </table>
+</ul>
+</article>

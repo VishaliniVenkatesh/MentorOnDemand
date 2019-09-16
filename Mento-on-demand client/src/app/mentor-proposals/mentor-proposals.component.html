@@ -1,0 +1,45 @@
+<app-header></app-header>
+<body>
+  <article>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active"><a routerLink="./mentor-details" class="nav-link">Home  </a></li>
+                <li><a  routerLink="/mentor-proposals" class="nav-link">View Requests </a></li>
+                <li> <a routerLink="/completed-trainings" class="nav-link">Completed-Trainings</a></li>
+                <li> <a routerLink="/onprogress-trainings" class="nav-link">Onprogress-Trainings</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li><a routerLink="/mentor-login" class="nav-link"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<table *ngIf="proposals">
+  <tr>
+      <th>ID</th>
+      <th>Skill name</th>
+      <th>User Name</th>
+      <th>Ratings </th>
+      <th>Action</th>                                             
+  </tr>
+  <tr *ngFor="let proposal of proposals|async">
+
+      <td>{{proposal.tid}}</td>
+      <td>{{proposal.skill_name}}</td>
+      <td>{{proposal.username}}</td>
+      <td>{{proposal.rating}}</td>
+      <td >
+        <button type="button" class="btn btn-success" (click)="approveProposal(proposal.tid)" >Approve</button>
+      </td>
+      <td >
+        <button type="button" class="btn btn-success" (click)="rejectProposal(Rejected)">Reject</button>
+      </td>
+   </tr>
+  
+</table>
+</article>
+</body>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

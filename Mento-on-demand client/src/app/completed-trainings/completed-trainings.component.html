@@ -1,0 +1,45 @@
+<app-header></app-header>
+<body>
+    
+<article>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active"><a routerLink="./mentor-details" class="nav-link">Home  </a></li>
+                <li><a  routerLink="/mentor-proposals" class="nav-link">View Requests </a></li>
+                <li> <a routerLink="/completed-trainings" class="nav-link">Completed-Trainings</a></li>
+                <li> <a routerLink="/onprogress-trainings" class="nav-link">Onprogress-Trainings</a></li>
+                
+               
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a routerLink="/mentor-login" class="nav-link"><span class="glyphicon glyphicon-log-in" ></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+<table *ngIf="completedTrainings">
+    <tr>
+        <th>ID</th>
+        <th>Skill name</th>
+        <th>User Name</th>
+        <th>Mentor Name</th>
+        <th>Progress</th>                                                                                                                                                                                                        
+        <th>Rating</th>
+    </tr>
+    <tr *ngFor="let training of completedTrainings|async">
+
+        <td>{{training.tid}}</td>
+        <td>{{training.skill_name}}</td>
+        <td>{{training.username}}</td>
+        <td>{{training.mentor_name}}</td>
+        <td>{{training.progress}}</td>
+        <td>{{training.rating}}</td>
+     </tr>
+</table>
+</div>
+</article>
+</body>
+<app-footer></app-footer>
+
+

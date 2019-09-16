@@ -1,0 +1,35 @@
+   <app-header></app-header> 
+   <article>
+  <form  (ngSubmit)="onSubmit()">
+      <table>
+          <tr>
+              <td colspan=2>
+                  <h1>Login</h1><br>
+              </td>
+          </tr>
+          <div>
+          <tr>
+              <td><label for="email"><b>Username</b></label></td><br>
+              <td><input type="email" placeholder="Enter Email Id" name="email" id="email" required [(ngModel)]="email"></td>
+          </tr>
+
+          <tr>
+              <td><label for="Password"><b>Password</b></label></td><br>
+              <td><input type="password" placeholder="Enter Password" name="password" id="Password" required [(ngModel)]="password" ></td>
+          </tr>
+        </div>
+          <!-- <tr>
+            <td><label for="role"><b>Role</b></label></td><br>
+            <td><input type="text" placeholder="Enter role" name="role" id="role" required></td>
+        </tr> 
+          <tr>
+                  <td><p>New Users Can <a href="UserSignUp.html"> Register Here</a> </p></td>  </tr>
+-->
+    <div class="btn-group">
+        <button type="submit" class="btn btn-success">Sign in</button>
+    </div>
+          
+</table>
+  </form>
+   </article>
+   <app-footer></app-footer>
